@@ -1,0 +1,3 @@
+[submodule "xcel"]
+	path = xcel
+	url = https://github.com/mattrobmattrob/XcelCalculator
