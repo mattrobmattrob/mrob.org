@@ -2,6 +2,11 @@ html {
     background-color: #eee;
     font-family: sans-serif;
   }
+
+  .section-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   
   section {
     padding: 1em;
