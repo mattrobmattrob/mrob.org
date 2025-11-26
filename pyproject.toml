@@ -6,8 +6,9 @@ authors = [
     {name = "Matt Robinson",email = "mattrob@hey.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.14,<4.0"
 dependencies = [
+    "pelican[markdown] (>=4.11.0.post0,<5.0.0)"
 ]
 
 [tool.poetry]
