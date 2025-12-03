@@ -1,8 +1,12 @@
-+++
-date = '2025-12-02T19:55:58-07:00'
-draft = false
-title = 'Increase django-polymorphic per model query limit'
-+++
+---
+title: "Increase django-polymorphic per model query limit"
+date: "2025-12-02"
+lang: "en"
+authors: ["Matt Robinson"]
+categories: ["Software"]
+tags: ["django"]
+draft: false
+---
 
 [`django-polymorphic`](https://github.com/jazzband/django-polymorphic), to quote the docs:
 
