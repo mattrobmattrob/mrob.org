@@ -1,0 +1,4 @@
+baseURL = 'https://mrob.org/'
+languageCode = 'en-us'
+title = 'mrob'
+theme = 'ananke'
