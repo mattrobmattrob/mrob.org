@@ -89,6 +89,9 @@ header {
 }
 
 .site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-text);
@@ -149,17 +152,24 @@ footer {
 
 /* Post meta */
 .post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   color: var(--color-muted);
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.post-meta time {
-  margin-right: 1rem;
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .tags {
-  display: inline;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .tag {

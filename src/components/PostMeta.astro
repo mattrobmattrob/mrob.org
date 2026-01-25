@@ -1,4 +1,6 @@
 ---
+import { Calendar, Tag } from "@lucide/astro";
+
 interface Props {
   date: Date;
   tags?: string[];
@@ -14,10 +16,14 @@ const formattedDate = date.toLocaleDateString("en-US", {
 ---
 
 <div class="post-meta">
-  <time datetime={date.toISOString()}>{formattedDate}</time>
+  <span class="meta-item">
+    <Calendar size={14} />
+    <time datetime={date.toISOString()}>{formattedDate}</time>
+  </span>
   {
     tags.length > 0 && (
       <span class="tags">
+        <Tag size={14} />
         {tags.map((tag) => (
           <a href={`/tags/${tag}/`} class="tag">
             {tag}
