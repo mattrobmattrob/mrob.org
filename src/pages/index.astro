@@ -20,7 +20,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
           )}
           <div class="post-details">
             <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            <PostMeta date={post.data.date} tags={post.data.tags} />
+            <PostMeta date={post.data.date} />
             {post.data.description && (
               <p class="description">{post.data.description}</p>
             )}
