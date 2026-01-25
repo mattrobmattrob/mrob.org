@@ -6,9 +6,13 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Personal blog" } = Astro.props;
+const { title, description = "Personal blog", image } = Astro.props;
+const siteUrl = Astro.site?.toString() || "https://mrob.org";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const imageUrl = image ? new URL(image, siteUrl).toString() : undefined;
 ---
 
 <!doctype html>
@@ -17,8 +21,22 @@ const { title, description = "Personal blog" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
   </head>
   <body>
     <div class="container">
