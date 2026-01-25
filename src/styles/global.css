@@ -124,6 +124,29 @@ footer {
   margin-top: 0.25rem;
 }
 
+.post-list li.has-cover {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.cover-link {
+  flex-shrink: 0;
+  order: 1;
+}
+
+.cover-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.post-details {
+  flex: 1;
+  min-width: 0;
+}
+
 /* Post meta */
 .post-meta {
   color: var(--color-muted);

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import Base from "../layouts/Base.astro";
 import PostMeta from "../components/PostMeta.astro";
@@ -11,12 +12,19 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   <ul class="post-list">
     {
       posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-          <PostMeta date={post.data.date} tags={post.data.tags} />
-          {post.data.description && (
-            <p class="description">{post.data.description}</p>
+        <li class={post.data.cover ? "has-cover" : ""}>
+          {post.data.cover && (
+            <a href={`/blog/${post.slug}/`} class="cover-link">
+              <Image src={post.data.cover} alt="" class="cover-image" />
+            </a>
           )}
+          <div class="post-details">
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <PostMeta date={post.data.date} tags={post.data.tags} />
+            {post.data.description && (
+              <p class="description">{post.data.description}</p>
+            )}
+          </div>
         </li>
       ))
     }
