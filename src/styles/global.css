@@ -181,8 +181,51 @@ article h1 {
 }
 
 article img {
-  max-width: 100%;
+  display: block;
+  max-width: 70%;
   height: auto;
+  margin: 1rem auto;
+  border-radius: 5px;
+}
+
+.image-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.image-row p {
+  display: none;
+}
+
+.image-row figure {
+  flex: 1;
+  max-width: 50%;
+  margin: 0;
+}
+
+.image-row img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+/* Figure with caption */
+figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+figure img {
+  margin-bottom: 0.5rem;
+}
+
+figcaption {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  font-style: italic;
 }
 
 /* Code */
