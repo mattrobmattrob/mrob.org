@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import PostMeta from "../../components/PostMeta.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      posts: posts
+        .filter((post) => post.data.tags.includes(tag))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<Base title={`Posts tagged "${tag}"`}>
+  <h1>Posts tagged "{tag}"</h1>
+  <p><a href="/">&larr; All posts</a></p>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          <PostMeta date={post.data.date} tags={post.data.tags} />
+          {post.data.description && (
+            <p class="description">{post.data.description}</p>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</Base>
