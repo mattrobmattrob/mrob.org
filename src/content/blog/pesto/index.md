@@ -2,7 +2,7 @@
 title: "Pesto - Local Build Event Service"
 date: 2026-01-25
 description: "Local macOS menubar app for the Build Event Protocol (BEP)."
-tags: ["agentic-engineering", "bazel"]
+tags: ["agentic-engineering", "bazel", "claude-code"]
 cover: ./pesto-main-pending.png
 ---
 
