@@ -109,13 +109,18 @@ footer {
   font-size: 0.875rem;
 }
 
-.rss-link {
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
   color: var(--color-muted);
   display: flex;
   align-items: center;
 }
 
-.rss-link:hover {
+.social-links a:hover {
   color: var(--color-link);
 }
 
