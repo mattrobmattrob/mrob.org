@@ -121,6 +121,11 @@ footer {
   font-weight: 500;
 }
 
+.post-list .tag {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
 .post-list .description {
   color: var(--color-muted);
   font-size: 0.95rem;
@@ -176,7 +181,7 @@ footer {
   background: var(--color-code-bg);
   padding: 0.15rem 0.5rem;
   border-radius: 3px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin-right: 0.25rem;
 }
 
