@@ -8,7 +8,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Base title="mrob.org">
+<Base title="Matt Robinson">
   <ul class="post-list">
     {
       posts.map((post) => (
