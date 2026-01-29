@@ -21,12 +21,10 @@ export async function GET(context: APIContext) {
       link: `/blog/${post.slug}/`,
       categories: post.data.tags,
       content: sanitizeHtml(parser.render(post.body ?? ""), {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(["img", "div"]),
-        allowedAttributes: {
-          ...sanitizeHtml.defaults.allowedAttributes,
-          div: ["class"],
-        },
-      }),
+        allowedTags: sanitizeHtml.defaults.allowedTags.filter(
+          (tag) => tag !== "div"
+        ),
+      }).replace(/<p>\s*<\/p>/g, ""),
     })),
   });
 }
