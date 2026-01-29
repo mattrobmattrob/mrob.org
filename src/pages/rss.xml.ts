@@ -10,10 +10,13 @@ export async function GET(context: APIContext) {
   const posts = (await getCollection("blog", ({ data }) => !data.draft))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+  const siteUrl = context.site!.toString().replace(/\/$/, "");
+
   return rss({
     title: "Matt Robinson",
     description: "Personal blog",
     site: context.site!,
+    customData: `<image><url>${siteUrl}/favicon.svg</url><title>Matt Robinson</title><link>${siteUrl}</link></image>`,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
