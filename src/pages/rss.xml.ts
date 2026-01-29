@@ -16,7 +16,7 @@ export async function GET(context: APIContext) {
     title: "Matt Robinson",
     description: "Personal blog",
     site: context.site!,
-    customData: `<image><url>${siteUrl}/favicon.svg</url><title>Matt Robinson</title><link>${siteUrl}</link></image>`,
+    customData: `<image><url>${siteUrl}/favicon.png</url><title>Matt Robinson</title><link>${siteUrl}</link></image>`,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
