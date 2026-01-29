@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Organizations I Support" description="Organizations I sponsor and support.">
+  <h1>Organizations I Support</h1>
+  <p>These are organizations whose missions I believe in and support financially.</p>
+
+  <ul class="sponsor-list">
+    <li>
+      <a href="https://www.birds.cornell.edu/home" target="_blank" rel="noopener">Cornell Lab of Ornithology</a>
+      <p>An independent nonprofit combining science, technology, and citizen engagement to understand bird populations, inspire conservation action, and help people connect with the natural world.</p>
+    </li>
+    <li>
+      <a href="https://www.eff.org/" target="_blank" rel="noopener">Electronic Frontier Foundation</a>
+      <p>The leading nonprofit defending digital privacy, free speech, and innovation through advocacy, legal action, and tools that help individuals protect themselves online.</p>
+    </li>
+    <li>
+      <a href="https://www.npr.org/" target="_blank" rel="noopener">NPR</a>
+      <p>Nonprofit journalism providing news, analysis, music, arts, and podcasts covering a wide range of topics from current events to cultural programming.</p>
+    </li>
+    <li>
+      <a href="https://signal.org/" target="_blank" rel="noopener">Signal</a>
+      <p>An independent nonprofit providing a simple, powerful, and secure messenger with state-of-the-art end-to-end encryption. No ads, no trackers.</p>
+    </li>
+    <li>
+      <a href="https://wildbear.org/" target="_blank" rel="noopener">Wild Bear Nature Center</a>
+      <p>A Colorado-based environmental education organization that inspires connections to nature and community through outdoor exploration, hands-on nature experiences, and environmental stewardship initiatives.</p>
+    </li>
+  </ul>
+</Base>
+
+<style>
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  h1 + p {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .sponsor-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sponsor-list li {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .sponsor-list li:last-child {
+    border-bottom: none;
+  }
+
+  .sponsor-list a {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .sponsor-list p {
+    margin: 0.5rem 0 0;
+    color: #444;
+  }
+</style>

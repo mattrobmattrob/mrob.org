@@ -1,8 +1,39 @@
 ---
+const pathname = Astro.url.pathname;
+const isBlog = pathname === "/" || pathname.startsWith("/blog");
+const isSponsors = pathname.startsWith("/sponsors");
 ---
 
 <header>
   <nav>
     <a href="/" class="site-title">Matt Robinson</a>
+    <div class="nav-links">
+      <a href="/" class:list={[{ active: isBlog }]}>Blog</a>
+      <a href="/sponsors/" class:list={[{ active: isSponsors }]}>Sponsorships</a>
+    </div>
   </nav>
 </header>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .nav-links a.active {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>
